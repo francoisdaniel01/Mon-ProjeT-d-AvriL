@@ -1,0 +1,113 @@
+<!-- Projet FAY - Page d'accueil professionnelle -->
+<!-- Fichier index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAY Immobilier - Accueil</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    const video = document.getElementById("background-video");
+    const sources = [
+      "videos/bg1.mp4",
+      "videos/bg2.mp4",
+      "videos/bg3.mp4"
+    ];
+    let current = 0;
+  
+    video.addEventListener("ended", () => {
+      current = (current + 1) % sources.length;
+      video.src = sources[current];
+      video.load();
+      video.play();
+    });
+  </script>
+  
+</head>
+ <body>
+  <!-- SECTION HERO VIDÉOS -->
+  <header class="hero" style="background-image: url('https://img.freepik.com/photos-gratuite/paysage-analogique-ville-batiments_23-2149661456.jpg?t=st=1745406256~exp=1745409856~hmac=5def509ecac5c4e6ec48e6425122d91417d89d1759b9113d63d3af14cfa1a6dd&w=740');">
+    <div class="hero-content">
+      <h1>Bienvenue chez FAY Immobilier</h1>
+      <p>Votre avenir immobilier commence ici</p>
+      <a href="pages/login.html" class="btn-connect">Connexion</a>
+      <a href="pages/register.html" class="btn-inscription">Inscription</a>
+    </div>
+  </header>
+  
+
+  <!-- SERVICES EN VEDETTE -->
+  <section class="services">
+    <h2>Nos services</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/vente-maison.jpg" alt="Vente maison">
+        <h3>Vente de maisons</h3>
+        <p>Des maisons de rêve à partir de <strong>45 000 000 FCFA</strong>.</p>
+        <a href="#" class="btn">Voir plus</a>
+      </div>
+      <div class="card">
+        <img src="images/vente-terrain.jpg" alt="Vente terrain">
+        <h3>Vente de terrains</h3>
+        <p>Terrains à partir de <strong>10 000 000 FCFA</strong>.</p>
+        <a href="#" class="btn">Voir plus</a>
+      </div>
+      <div class="card">
+        <img src="images/location-maison.jpg" alt="Location maison">
+        <h3>Location de maisons</h3>
+        <p>À partir de <strong>250 000 FCFA/mois</strong>.</p>
+        <a href="#" class="btn">Voir plus</a>
+      </div>
+      <div class="card">
+        <img src="images/location-vehicule.jpg" alt="Location de véhicule">
+        <h3>Location de véhicules</h3>
+        <p>À partir de <strong>30 000 FCFA/jour</strong>.</p>
+        <a href="#" class="btn">Voir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISE EN AVANT D'ARTICLES -->
+  <section class="highlights">
+    <h2>Opportunités en vedette</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/villa-luxe.jpg" alt="Villa de luxe">
+        <h3>Villa moderne à Cocody</h3>
+        <p>6 pièces, piscine, garage double – <strong>120 000 000 FCFA</strong>.</p>
+        <a href="#" class="btn">Détails</a>
+      </div>
+      <div class="card">
+        <img src="images/appart-abidjan.jpg" alt="Appartement">
+        <h3>Appartement à Abidjan</h3>
+        <p>À partir de <strong>35 000 000 FCFA</strong>.</p>
+        <a href="#" class="btn">Détails</a>
+      </div>
+      <div class="card">
+        <img src="images/terrain-yopougon.jpg" alt="Terrain Yopougon">
+        <h3>Terrain à Yopougon</h3>
+        <p>500m² titré – <strong>12 000 000 FCFA</strong>.</p>
+        <a href="#" class="btn">Détails</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <h3>Abonnez-vous à notre newsletter</h3>
+    <p>Recevez les meilleures offres en exclusivité</p>
+    <form action="#">
+      <input type="email" placeholder="Votre email" required>
+      <button type="submit">S'abonner</button>
+    </form>
+  </section>
+
+  <!-- PIED DE PAGE -->
+  <footer>
+    <p>&copy; 2025 FAY Immobilier - Tous droits réservés</p>
+    <p>Développé avec ❤️ pour la présentation au PDG</p>
+  </footer>
+</body>
+</html>
