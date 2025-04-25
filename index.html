@@ -8,30 +8,148 @@
   <title>FAY Immobilier - Accueil</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script>
-    const video = document.getElementById("background-video");
-    const sources = [
-      "videos/bg1.mp4",
-      "videos/bg2.mp4",
-      "videos/bg3.mp4"
-    ];
-    let current = 0;
-  
-    video.addEventListener("ended", () => {
-      current = (current + 1) % sources.length;
-      video.src = sources[current];
-      video.load();
-      video.play();
-    });
-  </script>
-  
-</head>
- <body>
-  <!-- SECTION HERO VIDÉOS -->
-  <header class="hero" style="background-image: url('https://img.freepik.com/photos-gratuite/paysage-analogique-ville-batiments_23-2149661456.jpg?t=st=1745406256~exp=1745409856~hmac=5def509ecac5c4e6ec48e6425122d91417d89d1759b9113d63d3af14cfa1a6dd&w=740');">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      padding-top: 50px;
+      background-color: #f7f7f7;
+    }
 
-    
-    
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 94, 216, 0.349);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      height: 90px;
+    }
+
+    .navbar .menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: white;
+      padding: 100px 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-connect,
+    .btn-inscription {
+      margin: 10px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #007bff;
+      border-radius: 5px;
+    }
+
+    .btn-inscription {
+      background-color: #28a745;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .services, .highlights {
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card p {
+      padding: 0 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="accueil" style="height: 1px;"></div>
+
+  <!-- NAVBAR FIXE -->
+  <nav class="navbar" id="accueil">
+    <div class="logo-container">
+     
+        <img src="images/Logo.png" alt="FAY Immobilier" class="logo">
+      </a>
+    </div>
+    <ul class="menu">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="terrains.html">Terrains</a></li>
+      <li><a href="maisons.html">Maisons</a></li>
+      <li><a href="vehicules.html">Véhicules</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="pages/login.html">Connexion</a></li>
+    </ul>
+  </nav>
+
+  <!-- SECTION HERO -->
+  <header class="hero" style="background-image: url('https://img.freepik.com/photos-gratuite/paysage-analogique-ville-batiments_23-2149661456.jpg'); background-size: cover; background-position: center;">
     <div class="hero-content">
       <h1>Bienvenue chez FAY Immobilier</h1>
       <p>Votre avenir immobilier commence ici</p>
@@ -39,9 +157,8 @@
       <a href="pages/register.html" class="btn-inscription">Inscription</a>
     </div>
   </header>
-  
 
-  <!-- SERVICES EN VEDETTE -->
+  <!-- SERVICES -->
   <section class="services" id="services">
     <h2>Nos services</h2>
     <div class="cards">
@@ -64,7 +181,7 @@
         <a href="services/locations.html" class="btn">Voir plus</a>
       </div>
       <div class="card">
-        <img src="C:\Users\John François Daniel\Downloads\Mon Projet d'Avril\Les Images\location de véhicules.jpg" alt="Location de véhicule">
+        <img src="C:\Users\John François Daniel\Downloads\Mon Projet d'Avril\Les Images\location de véhicules.jpg" alt="Location véhicule">
         <h3>Location de véhicules</h3>
         <p>À partir de <strong>30 000 FCFA/jour</strong>.</p>
         <a href="services/vehicules.html" class="btn">Voir plus</a>
@@ -72,7 +189,7 @@
     </div>
   </section>
 
-  <!-- MISE EN AVANT D'ARTICLES -->
+  <!-- OPPORTUNITÉS EN VEDETTE -->
   <section class="highlights">
     <h2>Opportunités en vedette</h2>
     <div class="cards">
@@ -89,28 +206,29 @@
         <a href="#" class="btn">Détails</a>
       </div>
       <div class="card">
-        <img src="C:\Users\John François Daniel\Downloads\Mon Projet d'Avril\Les Images\terrain a yap.jpg" alt="Terrain Yopougon">
+        <img src="C:\Users\John François Daniel\Downloads\Mon Projet d'Avril\Les Images\terrain a yap.jpg" alt="Terrain à Yopougon">
         <h3>Terrain à Yopougon</h3>
-        <p>500m² titré – <strong>12 000 000 FCFA</strong>.</p>
+        <p>Zone résidentielle – <strong>12 000 000 FCFA</strong>.</p>
         <a href="#" class="btn">Détails</a>
       </div>
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
-  <section class="newsletter">
-    <h3>Abonnez-vous à notre newsletter</h3>
-    <p>Recevez les meilleures offres en exclusivité</p>
-    <form action="#">
-      <input type="email" placeholder="Votre email" required>
-      <button type="submit">S'abonner</button>
-    </form>
-  </section>
+  <!-- SECTION À PROPOS -->
+<section id="apropos" class="about" style="background-color: #f8f9fa; padding: 40px 20px; text-align: center;">
+  <h2>À propos de FAY Immobilier</h2>
+  <p style="max-width: 700px; margin: 0 auto; color: #555;">
+    FAY Immobilier est une agence spécialisée dans la vente, la location de biens immobiliers et de véhicules en Côte d'Ivoire. 
+    Nous vous accompagnons à chaque étape de votre projet immobilier pour garantir une expérience fiable et transparente.
+  </p>
+</section>
 
-  <!-- PIED DE PAGE -->
-  <footer>
-    <p>&copy; 2025 FAY Immobilier - Tous droits réservés</p>
-    <p>Développé avec ❤️ pour la présentation au PDG</p>
-  </footer>
+<!-- FOOTER -->
+<footer style="background-color: #003366; color: white; text-align: center; padding: 20px 10px;">
+  <p>&copy; 2025 FAY Immobilier. Tous droits réservés.</p>
+  <p><a href="mailto:contact@fayimmobilier.ci" style="color: #ccc; text-decoration: none;">contact@fayimmobilier.ci</a></p>
+</footer>
+
+
 </body>
 </html>

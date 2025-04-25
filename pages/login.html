@@ -1,4 +1,4 @@
-<!-- Fichier login.html -->
+<!-- login.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,6 +9,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- NAVBAR FIXE -->
+  <style>
+ 
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 94, 216, 0.349);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1px 20px;
+    }
+  
+    .logo {
+      height: 90px;
+    }
+  
+    .navbar .menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .navbar .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+  
+    .navbar .menu li a:hover {
+      color: #007bff;
+    }
+  </style>
+  
+  <nav class="navbar" id="accueil">
+    <div class="logo-container">
+      <a href="../index.html">
+        <img src="C:\Users\John François Daniel\Downloads\Mon Projet d'Avril\Les Images\Logo.png" alt="FAY Immobilier" class="logo">
+      </a>
+    </div>
+    <ul class="menu">
+      <li><a href="../index.html#accueil">Accueil</a></li>
+      <li><a href="../terrains.html">Terrains</a></li>
+      <li><a href="../maisons.html">Maisons</a></li>
+      <li><a href="../vehicules.html">Véhicules</a></li>
+      <li><a href="../index.html#apropos">À propos</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteneur du menu -->
+  <div id="navbar-container"></div>
+
+  <!-- Formulaire de connexion -->
   <section class="login-section">
     <div class="form-container">
       <h2>Connexion à votre compte</h2>
@@ -24,5 +85,21 @@
       </form>
     </div>
   </section>
+
+  <script>
+    fetch('../navbar.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erreur de chargement de la navbar');
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Erreur :', error);
+      });
+  </script>
 </body>
 </html>

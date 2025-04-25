@@ -251,3 +251,37 @@ body {
   }
   
   
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo-container img.logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .menu li a:hover {
+    color: #007bff;
+  }
+  

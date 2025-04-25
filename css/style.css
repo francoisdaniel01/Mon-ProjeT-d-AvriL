@@ -218,3 +218,100 @@ body {
     color: white;
     font-size: 0.9em;
   }
+
+
+
+  .top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 45px;
+    width: auto;
+  }
+  
+  /* Menu */
+  .nav-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+  }
+  
+  .nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-menu ul li a:hover {
+    color: #007bff;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: white; /* ou la couleur que tu veux */
+  }
+
+  
+
+
+  .navbar .menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  /* Effet soulignement animé */
+  .navbar .menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Hover sur les liens */
+  .navbar .menu li a:hover {
+    color: #007bff;
+  }
+  
+  /* Le soulignement apparaît */
+  .navbar .menu li a:hover::after {
+    width: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  
+
+  
+
+  
+
