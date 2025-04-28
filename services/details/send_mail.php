@@ -1,30 +1,36 @@
 <?php
+// Remplacer par ton email
+$to = "francoisdanino@gmail.com"; 
+
+// Vérifier si le formulaire est soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = htmlspecialchars($_POST["nom"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $telephone = htmlspecialchars($_POST["telephone"]);
-    $message = htmlspecialchars($_POST["message"]);
+    // Protéger les données entrées
+    $name = htmlspecialchars(strip_tags($_POST['name']));
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $message = htmlspecialchars(strip_tags($_POST['message']));
 
-    $to = "francoisdanino@gmail.com";  // Ton adresse email
-    $subject = "Nouveau message - Détails Maison";
-    $headers = "From: " . $email . "\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
-    $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
+    // Sujet de l'email
+    $subject = "Nouveau message de votre site";
 
-    $body = "
-        <h2>Nouveau message reçu depuis la page de maison</h2>
-        <p><strong>Nom :</strong> $nom</p>
-        <p><strong>Email :</strong> $email</p>
-        <p><strong>Téléphone :</strong> $telephone</p>
-        <p><strong>Message :</strong><br>$message</p>
-    ";
+    // Contenu de l'email
+    $email_content = "Nom: $name\n";
+    $email_content .= "Email: $email\n\n";
+    $email_content .= "Message:\n$message\n";
 
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Message envoyé avec succès.";
+    // Headers de l'email
+    $headers = "From: $name <$email>";
+
+    // Envoi de l'email
+    if (mail($to, $subject, $email_content, $headers)) {
+        header("Location: contact.html?success=1");
+        exit;
     } else {
-        echo "Une erreur s'est produite lors de l'envoi.";
+        header("Location: contact.html?error=1");
+        exit;
     }
 } else {
-    echo "Méthode non autorisée.";
+    // Redirection s'il y a un accès direct
+    header("Location: contact.html");
+    exit;
 }
 ?>
