@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrain à Hengwiller</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .menu li a:hover {
+            color: #007bff;
+        }
+
+        .card {
+            max-width: 90%;
+            margin: 80px auto 0; /* Adjusted for navbar */
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border: 5px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel img.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s ease;
+        }
+
+        .carousel button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .carousel .prev {
+            left: 10px;
+        }
+
+        .carousel .next {
+            right: 10px;
+        }
+
+        .heart-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .heart-container svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            stroke: red;
+            stroke-width: 2;
+            cursor: pointer;
+            transition: fill 0.2s;
+        }
+
+        .heart-container svg.liked {
+            fill: red;
+        }
+
+        #heart-count {
+            font-size: 16px;
+            margin-left: 8px;
+            color: #e74c3c;
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .card-content .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin: 1rem 0;
+        }
+
+        form {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1c6390;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="../images/Logo.png" alt="Logo" class="logo">
+        <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+        </ul>
+    </nav>
+
+    <div class="card">
+        <div class="carousel">
+            <img src="https://lh3.googleusercontent.com/m2_Y6X-cMA8vF0bCDD0srgKRoLs0L-DP9iYp-86Jyalu-FXHXa8hS_oHE-qApb7oSuIRKyiUg_MtRAjpgNAxbbkRG1NCe-OY_en4CVY=rj-w0-h1600-l80" class="slide active" />
+            <img src="https://lh3.googleusercontent.com/WHAC0n640poJRC00n4qcYbQ2Z5GsAtmnXhbnGs0DJbfcqlP_67ESqJp3RkDpv7zQ2kGIvbzSkT3z3Fe8jn1wB1HxfKt9trMDb4_gC8Y=rj-w0-h1600-l80" class="slide" />
+            <img src="https://lh3.googleusercontent.com/Ai1GEkwCGGgkuIEHTwHbATgqNclw7l6bsLQ9X7x8VP6SPye_TQd1jaLXpXipRWhepobBIVssTrSetIGNFPzq0lVK3mn-vlQ_uQ4viiE=rj-w940-h605-l80" class="slide" />
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+
+            <div class="heart-container">
+                <svg id="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                             C2 6.5 3.5 5 5.5 5
+                             C6.74 5 7.97 5.54 8.91 6.46
+                             L12 9.35l3.09-2.89
+                             C16.03 5.54 17.26 5 18.5 5
+                             C20.5 5 22 6.5 22 8.5
+                             c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span id="heart-count">16</span>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <h3>🌳 Terrain à Bâtir à Hengwiller – Bas-Rhin (67), France</h3>
+            <p><strong>📍 Localisation :</strong> Hengwiller, région Grand Est, Bas-Rhin</p>
+            <p><strong>🌿 Environnement :</strong> Calme, nature verdoyante, parfait pour une vie paisible</p>
+            <p><strong>🏡 Usage :</strong> Terrain constructible pour résidence principale ou secondaire</p>
+            <p><strong>💶 Paiement :</strong> Possibilité à partir de 172 €/mois</p>
+            <p><strong>📄 Réf. annonce :</strong> Fiche N° Id-EXP173859</p>
+            <p class="price">💰 Prix : 24 900 000 FCFA (env. 38 000 €)</p>
+        
+
+            
+            <p>Pour plus d'informations, contactez-nous via le formulaire ci-dessous :</p>
+
+            
+
+            <form action="mailto:francoisdanino@gmail.com" method="POST" enctype="text/plain">
+                <input type="text" name="nom" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+                <textarea name="message" rows="4" placeholder="Votre message..." required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach((slide, j) => {
+                slide.classList.remove('active');
+                if (j === i) slide.classList.add('active');
+            });
+        }
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide(index);
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        });
+
+        showSlide(index);
+        // Handle heart click
+        const heartIcon = document.getElementById('heart-icon');
+        const heartCount = document.getElementById('heart-count');
+        let count = parseInt(localStorage.getItem('likeCount')) || parseInt(heartCount.textContent);
+        let userLiked = localStorage.getItem('userLiked') === 'true';
+
+        // Update initial state
+        heartCount.textContent = count;
+        if (userLiked) heartIcon.classList.add('liked');
+
+        heartIcon.addEventListener('click', () => {
+            if (heartIcon.classList.contains('liked')) {
+            count -= 1;
+            heartIcon.classList.remove('liked');
+            localStorage.setItem('userLiked', 'false');
+            } else {
+            count += 1;
+            heartIcon.classList.add('liked');
+            localStorage.setItem('userLiked', 'true');
+            }
+            heartCount.textContent = count;
+            localStorage.setItem('likeCount', count);
+        });
+    </script>
+</body>
+</html>
+<!-- Compare this snippet from services/details/terrain1.html: -->
